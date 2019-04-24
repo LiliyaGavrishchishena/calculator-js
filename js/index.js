@@ -6,14 +6,13 @@
       // ID passed? -> returns single element
       return document.querySelector(element);
     }
-
     return document.querySelectorAll(element); //returns a nodelist
   };
 
   let viewer = $('#viewer'), // display of result
-    equal = $('#equal'), // Equal button
-    nums = $('.num'), // List of numbers
-    ops = $('.ops'), // List of operators
+    equal = $('#equal'),
+    nums = $('.num'),
+    ops = $('.ops'),
     clear = $('#clear'),
     theNum = '', // Current number
     oldNum = '', // First number
@@ -28,10 +27,16 @@
     }
   };
 
+  // When: Number is clicked. Get the current number selected
   let setNums = function() {
-    theNum += this.getAttribute('data-num');
-
-    viewer.innerHTML = theNum;
+    if (resultNum) {
+      // If a result was displayed, reset number
+      theNum = this.getAttribute('data-num');
+      resultNum = '';
+    } else {
+      theNum += this.getAttribute('data-num');
+    }
+    viewer.innerHTML = theNum; // Display current number
   };
 
   let clearAll = function() {
@@ -41,8 +46,7 @@
   };
 
   let displayNum = function() {
-    console.log('displayNum()');
-
+    // Convert string input to numbers
     oldNum = parseFloat(oldNum);
     theNum = parseFloat(theNum);
 
@@ -63,12 +67,13 @@
         resultNum = oldNum / theNum;
         break;
 
+      // If equal is pressed without an operator, keep number and continue
       default:
         resultNum = theNum;
     }
 
     if (!isFinite(resultNum)) {
-      resultNum = 'Ошибка';
+      resultNum = 'Error';
     }
 
     viewer.innerHTML = resultNum;
@@ -78,14 +83,16 @@
     operator = null;
   };
 
+  /* The click events */
+  // Add click event to operators
   for (let i = 0; i < ops.length; i += 1) {
     ops[i].onclick = setOps;
   }
-
+  // Add click event to numbers
   for (let i = 0; i < nums.length; i += 1) {
     nums[i].onclick = setNums;
   }
-
+  // Add click event to equal sign
   clear.onclick = clearAll;
 
   equal.onclick = displayNum;

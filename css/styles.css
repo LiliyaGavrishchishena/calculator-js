@@ -28,14 +28,16 @@ h1 {
 
 .calculator {
   font-size: 28px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   width: 10em;
 }
+
 .calculator::before,
 .calculator::after {
   content: ' ';
   display: table;
 }
+
 .calculator::after {
   clear: both;
 }
@@ -70,19 +72,6 @@ button:hover {
 
 button:focus {
   outline: 0;
-}
-
-@keyframes zoom {
-  0% {
-    transform: scale(0.2);
-    opacity: 1;
-  }
-  70% {
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 @media (min-width: 420px) {

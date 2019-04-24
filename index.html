@@ -10,8 +10,7 @@
   </head>
   <body>
     <h1>Calculator</h1>
-    <p class="warning">Don't divide by 0</p>
-    <div class="calculator">
+    <div id="calculator" class="calculator">
       <button id="clear" class="clear">C</button>
 
       <div id="viewer" class="viewer">0</div>
@@ -23,7 +22,7 @@
       <button class="num" data-num="4">4</button>
       <button class="num" data-num="5">5</button>
       <button class="num" data-num="6">6</button>
-      <button class="ops" data-ops="munis">-</button>
+      <button class="ops" data-ops="minus">-</button>
 
       <button class="num" data-num="1">1</button>
       <button class="num" data-num="2">2</button>
@@ -32,9 +31,10 @@
 
       <button class="num" data-num="0">0</button>
       <button class="num" data-num=".">.</button>
-      <button id="equal" class="equal">=</button>
+      <button id="equal" class="equal" data-result="">=</button>
       <button class="ops" data-ops="devided by">/</button>
     </div>
+
     <script src="./js/index.js"></script>
   </body>
 </html>
