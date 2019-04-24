@@ -11,12 +11,7 @@ body {
   padding: 5em 0 2em;
   height: 100%;
   text-align: center;
-  background-image: radial-gradient(
-      50% 30% ellipse at center top,
-      #201e40 0%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+  background: radial-gradient(circle, #fff, #ddd);
 }
 
 h1 {
@@ -25,10 +20,7 @@ h1 {
 }
 
 .warning {
-  background: -webkit-linear-gradient(45deg, #c97874 10%, #463042 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #8c5059;
+  color: #5c258d;
   font-weight: 400;
   margin: 0 auto 3em;
   max-width: 9em;
@@ -49,7 +41,7 @@ h1 {
 }
 
 .viewer {
-  color: #c97874;
+  color: #5c258d;
   float: left;
   line-height: 3em;
   text-align: right;
@@ -61,19 +53,19 @@ h1 {
 
 button {
   border: 0;
-  background: rgba(42, 50, 113, 0.28);
-  color: #6cacc5;
+  background: rgb(67, 137, 162, 0.7);
+  color: #fff;
   cursor: pointer;
   float: left;
   font: inherit;
-  margin: 0.25em;
+  margin: 0.15em;
   width: 2em;
   height: 2em;
   transition: all 0.5s;
 }
 
 button:hover {
-  background: #201e40;
+  background: rgb(92, 37, 141, 0.7);
 }
 
 button:focus {
